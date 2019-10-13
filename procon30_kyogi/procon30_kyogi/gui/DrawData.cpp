@@ -224,16 +224,16 @@ void DrawData::manualDirection(const int number) {
 	GUI guiManual(GUIStyle::Default);
 	Map* map;
 	map = map->getMap();
-	guiManual.add(L"btm1", GUIButton::Create(L"¶ã"));
-	guiManual.add(L"btm2", GUIButton::Create(L"ª"));
-	guiManual.addln(L"btm3", GUIButton::Create(L"‰Eã"));
-	guiManual.add(L"btm4", GUIButton::Create(L"©"));
-	guiManual.add(L"btm5", GUIButton::Create(L" ‘Ò‹@  "));
-	guiManual.addln(L"btm6", GUIButton::Create(L"¨"));
-	guiManual.add(L"btm7", GUIButton::Create(L"¶‰º"));
-	guiManual.add(L"btm8", GUIButton::Create(L"«"));
-	guiManual.addln(L"btm9", GUIButton::Create(L"‰E‰º"));
-	guiManual.add(L"btm10", GUIButton::Create(L"ƒLƒƒƒ“ƒZƒ‹"));
+	guiManual.add(L"btm1", GUIButton::Create(L"左上"));
+	guiManual.add(L"btm2", GUIButton::Create(L"↑"));
+	guiManual.addln(L"btm3", GUIButton::Create(L"右上"));
+	guiManual.add(L"btm4", GUIButton::Create(L"←"));
+	guiManual.add(L"btm5", GUIButton::Create(L" 待機  "));
+	guiManual.addln(L"btm6", GUIButton::Create(L"→"));
+	guiManual.add(L"btm7", GUIButton::Create(L"左下"));
+	guiManual.add(L"btm8", GUIButton::Create(L"↓"));
+	guiManual.addln(L"btm9", GUIButton::Create(L"右下"));
+	guiManual.add(L"btm10", GUIButton::Create(L"キャンセル"));
 	//guiManual.setPos(1500,800);
 	guiManual.setPos(250, 800);
 
