@@ -3,6 +3,7 @@
 #include "DrawData.h"
 #include "../Data/Field.h"
 #include <Siv3D.hpp>
+
 void ManualInput::mousePosition() {
 	Map* map;
 	map = map->getMap();
