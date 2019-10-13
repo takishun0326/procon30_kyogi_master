@@ -1,5 +1,4 @@
 #include"CreateMap.h"
-
 #include"../Data/Agents.h"
 
 //MapFrame

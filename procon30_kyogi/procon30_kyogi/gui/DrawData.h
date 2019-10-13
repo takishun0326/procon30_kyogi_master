@@ -3,6 +3,7 @@
 #include"../Data/Map.h"
 #include"../Data/Field.h"
 #include"../Data/Agents.h"
+#include"../gui/DrawMap.h"
 
 class DrawData {
 public: 
@@ -13,6 +14,7 @@ public:
 	void drawTiledScore();
 	void drawAreaScore();
 	void drawSumScore();
+	void manualDirection(const int numger);
 
 	void PushedButton();
 private:

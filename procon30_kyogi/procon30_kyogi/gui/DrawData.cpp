@@ -1,8 +1,9 @@
-#include "DrawData.h"
+ï»¿#include "DrawData.h"
+
 
 
 DrawData::DrawData() 
-	: gui(GUIStyle::Defalut) {
+	: gui(GUIStyle::Default) {
 
 	gui.setTitle(L"kyogi");
 	gui.setPos(0, 0);
@@ -12,112 +13,112 @@ DrawData::DrawData()
 	gui.addln(L"json_option", GUIText::Create(L"JSON_option"));
 
 	//Token
-	gui.add(L"token_name", GUIText::Create(L"ƒg[ƒNƒ“"));
+	gui.add(L"token_name", GUIText::Create(L"ãƒˆãƒ¼ã‚¯ãƒ³"));
 	gui.addln(L"token", GUITextArea::Create(1, 14));
 
 	//MatchID
-	gui.add(L"matchNumberText", GUIText::Create(L"ŽŽ‡ID"));
+	gui.add(L"matchNumberText", GUIText::Create(L"è©¦åˆID"));
 	gui.addln(L"matchNumber", GUITextArea::Create(1, 2));
 
 	//analysis
-	gui.addln(L"AnalysButton", GUIButton::Create(L"AnalysŒvŽZ"));
+	gui.addln(L"AnalysButton", GUIButton::Create(L"Analysè¨ˆç®—"));
 
-	//JsonFile“Ç‚Ýž‚Ý
-	gui.addln(L"getJSON", GUIButton::Create(L"MapJSONŽæ“¾"));
+	//JsonFileèª­ã¿è¾¼ã¿
+	gui.addln(L"getJSON", GUIButton::Create(L"MapJSONå–å¾—"));
 
 	//Input
-	//…•½ü
+	//æ°´å¹³ç·š
 	gui.add(GUIText::Create(L"Input"));
 	gui.add(L"hr", GUIHorizontalLine::Create(1));
 	gui.horizontalLine(L"hr").style.color = Color(127);
 
 
-	//Å‘åƒ^[ƒ“”
-	//‘S’Tõ‚ÅŽg‚¤
-	gui.add(L"textMT", GUIText::Create(L"I—¹ƒ^[ƒ“”"));
+	//æœ€å¤§ã‚¿ãƒ¼ãƒ³æ•°
+	//å…¨æŽ¢ç´¢ã§ä½¿ã†
+	gui.add(L"textMT", GUIText::Create(L"çµ‚äº†ã‚¿ãƒ¼ãƒ³æ•°"));
 	gui.add(L"readMT", GUITextArea::Create(1, 2));
-	gui.addln(L"btnMT", GUIButton::Create(L"Œˆ’è"));
+	gui.addln(L"btnMT", GUIButton::Create(L"æ±ºå®š"));
 
-	//ƒ`[ƒ€ID
-	//Â
-	gui.add(L"text9", GUIText::Create(L"Ž©ƒ`[ƒ€ID        :"));
+	//ãƒãƒ¼ãƒ ID
+	//é’
+	gui.add(L"text9", GUIText::Create(L"è‡ªãƒãƒ¼ãƒ ID        :"));
 	gui.text(L"text9").style.color = Palette::Blue;
 	gui.addln(L"blueID", GUITextArea::Create(1, 3, none, false));
 
-	//Ô
-	gui.add(L"text10", GUIText::Create(L"“Gƒ`[ƒ€ID          :"));
+	//èµ¤
+	gui.add(L"text10", GUIText::Create(L"æ•µãƒãƒ¼ãƒ ID          :"));
 	gui.text(L"text10").style.color = Palette::Red;
 	gui.addln(L"redID", GUITextArea::Create(1, 3, none, false));
-	//ID“ü—Íƒ{ƒ^ƒ“
-	gui.addln(L"bt4", GUIButton::Create(L"ID“ü—Í"));
+	//IDå…¥åŠ›ãƒœã‚¿ãƒ³
+	gui.addln(L"bt4", GUIButton::Create(L"IDå…¥åŠ›"));
 
 
-	//…•½ü
+	//æ°´å¹³ç·š
 	gui.add(L"hr", GUIHorizontalLine::Create(1));
 	gui.horizontalLine(L"hr").style.color = Color(127);
 
-	//ƒ|ƒCƒ“ƒg
-	//…•½ü
+	//ãƒã‚¤ãƒ³ãƒˆ
+	//æ°´å¹³ç·š
 	gui.add(GUIText::Create(L"Point"));
 	gui.add(L"hr", GUIHorizontalLine::Create(1));
 	gui.horizontalLine(L"hr").style.color = Color(127);
 
-	//ÂOurƒ^ƒCƒ‹ƒ|ƒCƒ“ƒg
-	gui.add(L"text1", GUIText::Create(L"Ž©ƒ^ƒCƒ‹@:"));
+	//é’Ourã‚¿ã‚¤ãƒ«ãƒã‚¤ãƒ³ãƒˆ
+	gui.add(L"text1", GUIText::Create(L"è‡ªã‚¿ã‚¤ãƒ«ã€€:"));
 	gui.text(L"text1").style.color = Palette::Blue;
 	gui.add(L"OurTileScore", GUITextArea::Create(1, 5));
 
-	//Ôotherƒ^ƒCƒ‹ƒ|ƒCƒ“ƒg
-	gui.add(L"text2", GUIText::Create(L"“Gƒ^ƒCƒ‹@:"));
+	//èµ¤otherã‚¿ã‚¤ãƒ«ãƒã‚¤ãƒ³ãƒˆ
+	gui.add(L"text2", GUIText::Create(L"æ•µã‚¿ã‚¤ãƒ«ã€€:"));
 	gui.text(L"text2").style.color = Palette::Red;
 	gui.addln(L"OtherTileScore", GUITextArea::Create(1, 5));
 
-	//Âour—Ìˆæƒ|ƒCƒ“ƒg
-	gui.add(L"text3", GUIText::Create(L"Ž©—Ìˆæ@@:"));
+	//é’ouré ˜åŸŸãƒã‚¤ãƒ³ãƒˆ
+	gui.add(L"text3", GUIText::Create(L"è‡ªé ˜åŸŸã€€ã€€:"));
 	gui.text(L"text3").style.color = Palette::Blue;
 	gui.add(L"OurAreaScore", GUITextArea::Create(1, 5));
 
-	//Ôother—Ìˆæƒ|ƒCƒ“ƒg
-	gui.add(L"text4", GUIText::Create(L"“G—Ìˆæ@@:"));
+	//èµ¤otheré ˜åŸŸãƒã‚¤ãƒ³ãƒˆ
+	gui.add(L"text4", GUIText::Create(L"æ•µé ˜åŸŸã€€ã€€:"));
 	gui.text(L"text4").style.color = Palette::Red;
 	gui.addln(L"OtherAreaScore", GUITextArea::Create(1, 5));
 
-	//ÂOur‡Œvƒ|ƒCƒ“ƒg
-	gui.add(L"text5", GUIText::Create(L"Ž©‡Œv@@:"));
+	//é’Ouråˆè¨ˆãƒã‚¤ãƒ³ãƒˆ
+	gui.add(L"text5", GUIText::Create(L"è‡ªåˆè¨ˆã€€ã€€:"));
 	gui.text(L"text5").style.color = Palette::Blue;
 	gui.add(L"OurSumScore", GUITextArea::Create(1, 5));
 
-	//Ôother‡Œvƒ|ƒCƒ“ƒg
-	gui.add(L"text6", GUIText::Create(L"“G‡Œv@@:"));
+	//èµ¤otheråˆè¨ˆãƒã‚¤ãƒ³ãƒˆ
+	gui.add(L"text6", GUIText::Create(L"æ•µåˆè¨ˆã€€ã€€:"));
 	gui.text(L"text6").style.color = Palette::Red;
 	gui.addln(L"OtherSumScore", GUITextArea::Create(1, 5));
 
-	//…•½ü
+	//æ°´å¹³ç·š
 	gui.add(L"hr", GUIHorizontalLine::Create(1));
 	gui.horizontalLine(L"hr").style.color = Color(127);
 
 	//Information
-	//…•½ü
+	//æ°´å¹³ç·š
 	gui.add(GUIText::Create(L"Information"));
 	gui.add(L"hr", GUIHorizontalLine::Create(1));
 	gui.horizontalLine(L"hr").style.color = Color(127);
 
 
-	//ƒ^[ƒ“”
-	gui.add(L"text7", GUIText::Create(L"ƒ^[ƒ“” F"));
+	//ã‚¿ãƒ¼ãƒ³æ•°
+	gui.add(L"text7", GUIText::Create(L"ã‚¿ãƒ¼ãƒ³æ•° ï¼š"));
 	gui.add(L"turn", GUITextArea::Create(1, 5));
 
-	// Window‚ÌÝ’è
+	// Windowã®è¨­å®š
 	Window::Resize(1920, 1080);
 	const Size targetSize(1920, 1080);
-	//ƒoƒbƒNƒOƒ‰ƒEƒ“ƒh‚ð”’
+	//ãƒãƒƒã‚¯ã‚°ãƒ©ã‚¦ãƒ³ãƒ‰ã‚’ç™½
 	Graphics::SetBackground(Palette::Gray);
 	outputTurn();
 }
 
 
 
-//ˆêŠ‡ŽÀs
+//ä¸€æ‹¬å®Ÿè¡Œ
 void DrawData::drawDataManager() {
 	Map* map;
 	map = map->getMap();
@@ -136,7 +137,7 @@ void DrawData::drawDataManager() {
 
 
 
-//ƒ{ƒ^ƒ““ü—ÍŠÖ˜A‚ð‚Ü‚Æ‚ß‚½
+//ãƒœã‚¿ãƒ³å…¥åŠ›é–¢é€£ã‚’ã¾ã¨ã‚ãŸ
 void DrawData::PushedButton() {
 	Map* map;
 	map = map->getMap();
@@ -154,7 +155,7 @@ void DrawData::PushedButton() {
 
 
 
-//ƒ^ƒCƒ‹“_•\Ž¦XV
+//ã‚¿ã‚¤ãƒ«ç‚¹è¡¨ç¤ºæ›´æ–°
 void DrawData::drawTiledScore() {
 	Map* map;
 	map = map->getMap();
@@ -168,7 +169,7 @@ void DrawData::drawTiledScore() {
 	gui.textArea(L"OtherTileScore").setText(OtherTileScore);
 
 }
-//—Ìˆæ•\Ž¦XV
+//é ˜åŸŸè¡¨ç¤ºæ›´æ–°
 void DrawData::drawAreaScore() {
 	Map* map;
 	map = map->getMap();
@@ -179,7 +180,7 @@ void DrawData::drawAreaScore() {
 	gui.textArea(L"OurAreaScore").setText(OurAreaScore);
 	gui.textArea(L"OtherAreaScore").setText(OtherAreaScore);
 }
-//‘‡•\Ž¦XV
+//ç·åˆè¡¨ç¤ºæ›´æ–°
 void DrawData::drawSumScore() {
 	Map* map;
 	map = map->getMap();
@@ -191,7 +192,7 @@ void DrawData::drawSumScore() {
 	gui.textArea(L"OtherSumScore").setText(OtherSumScore);
 
 
-	//ƒ^[ƒ“”
+	//ã‚¿ãƒ¼ãƒ³æ•°
 	gui.textArea(L"turn").setText(Widen(to_string(map->turn)));
 }
 
@@ -199,7 +200,7 @@ void DrawData::drawSumScore() {
 
 
 
-//ƒ^[ƒ“•\Ž¦
+//ã‚¿ãƒ¼ãƒ³è¡¨ç¤º
 void DrawData::outputTurn() {
 	Map *map;
 	map = map->getMap();
@@ -218,3 +219,92 @@ void DrawData::tokenSetUp() {
 
 	gui.textArea(L"token").setText(Token);
 }
+
+void DrawData::manualDirection(const int number) {
+	GUI guiManual(GUIStyle::Default);
+	Map* map;
+	map = map->getMap();
+	guiManual.add(L"btm1", GUIButton::Create(L"ÂÂ¶ÂÃ£"));
+	guiManual.add(L"btm2", GUIButton::Create(L"ÂÂª"));
+	guiManual.addln(L"btm3", GUIButton::Create(L"â€°EÂÃ£"));
+	guiManual.add(L"btm4", GUIButton::Create(L"ÂÂ©"));
+	guiManual.add(L"btm5", GUIButton::Create(L" â€˜Ã’â€¹@  "));
+	guiManual.addln(L"btm6", GUIButton::Create(L"ÂÂ¨"));
+	guiManual.add(L"btm7", GUIButton::Create(L"ÂÂ¶â€°Âº"));
+	guiManual.add(L"btm8", GUIButton::Create(L"ÂÂ«"));
+	guiManual.addln(L"btm9", GUIButton::Create(L"â€°Eâ€°Âº"));
+	guiManual.add(L"btm10", GUIButton::Create(L"Æ’LÆ’Æ’Æ’â€œÆ’ZÆ’â€¹"));
+	//guiManual.setPos(1500,800);
+	guiManual.setPos(250, 800);
+
+	DrawMap drawMap;
+	AgentsAction* agentsAction;
+	agentsAction = agentsAction->getAgentsAction();
+	while (System::Update()) {
+		drawMap.drawMapManager();
+
+		//ä¸Šæ®µ
+		if (guiManual.button(L"btm1").pushed) {
+			agentsAction->actionDxDy[number][0].second.first = -1;
+			agentsAction->actionDxDy[number][0].second.second = -1;
+			map->click = false;
+			break;
+		}
+		if (guiManual.button(L"btm2").pushed) {
+			agentsAction->actionDxDy[number][0].second.first = 0;
+			agentsAction->actionDxDy[number][0].second.second = -1;
+			map->click = false;
+			break;
+		}
+		if (guiManual.button(L"btm3").pushed) {
+			agentsAction->actionDxDy[number][0].second.first = 1;
+			agentsAction->actionDxDy[number][0].second.second = -1;
+			map->click = false;
+			break;
+		}
+		//ä¸­æ®µ
+		if (guiManual.button(L"btm4").pushed) {
+			agentsAction->actionDxDy[number][0].second.first = -1;
+			agentsAction->actionDxDy[number][0].second.second = 0;
+			map->click = false;
+			break;
+		}
+		if (guiManual.button(L"btm5").pushed) {
+			agentsAction->actionDxDy[number][0].second.first = 0;
+			agentsAction->actionDxDy[number][0].second.second = 0;
+			map->click = false;
+			break;
+		}
+		if (guiManual.button(L"btm6").pushed) {
+			agentsAction->actionDxDy[number][0].second.first = 1;
+			agentsAction->actionDxDy[number][0].second.second = 0;
+			map->click = false;
+			break;
+		}
+		//èŠ±å£‡
+		if (guiManual.button(L"btm7").pushed) {
+			agentsAction->actionDxDy[number][0].second.first = -1;
+			agentsAction->actionDxDy[number][0].second.second = 1;
+			map->click = false;
+			break;
+		}
+		if (guiManual.button(L"btm8").pushed) {
+			agentsAction->actionDxDy[number][0].second.first = 0;
+			agentsAction->actionDxDy[number][0].second.second = 1;
+			map->click = false;
+			break;
+		}
+		if (guiManual.button(L"btm9").pushed) {
+			agentsAction->actionDxDy[number][0].second.first = 1;
+			agentsAction->actionDxDy[number][0].second.second = 1;
+			map->click = false;
+			break;
+		}
+		//ã‚­ãƒ£ãƒ³ã‚»ãƒ«
+		if (guiManual.button(L"btm10").pushed) {
+			map->click = false;
+			break;
+		}
+	}
+}
+

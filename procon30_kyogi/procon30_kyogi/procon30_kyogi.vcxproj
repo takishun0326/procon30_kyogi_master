@@ -182,7 +182,6 @@
     <ClCompile Include="json\Source.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="gui\ManualInput.cpp" />
-    <ClCompile Include="SystemManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />
@@ -287,7 +286,6 @@
     <ClInclude Include="json\ParseJson.h" />
     <ClInclude Include="json\picojson.h" />
     <ClInclude Include="json\resource.h" />
-    <ClInclude Include="SystemManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
