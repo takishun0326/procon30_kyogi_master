@@ -58,7 +58,7 @@ void CreateJson::createJson(string token,string port,string matchID)
 			nowX = agents->ourAgents[i][1] - 1 + agentsAcn->actionDxDy[i][0].second.first;
 			nowY = agents->ourAgents[i][2] - 1 + agentsAcn->actionDxDy[i][0].second.second;
 
-			if (agentsAcn->actionDxDy[i][1].second.first == 0 && agentsAcn->actionDxDy[i][2].second.second) {
+			if (agentsAcn->actionDxDy[i][1].second.first == 0 && agentsAcn->actionDxDy[i][2].second.second ==0) {
 				ActionMove = "stay";
 			}
 			else if (field->tiled[nowX][nowY] == map->otherTeamID) {
@@ -95,7 +95,7 @@ void CreateJson::createJson(string token,string port,string matchID)
 	
 	string auth = escapeStr("Authorization: " + token) + " ";
 	string content_type = escapeStr("Content-Type: application/json") + " ";
-	string host = "http://localhost:" + port + "/matches/" + matchID + "/action ";
+	string host = "http://10.10.52.252/matches/" + matchID + "/action ";
 
 	//Action Jsonに
 	string SystemJSON = "";

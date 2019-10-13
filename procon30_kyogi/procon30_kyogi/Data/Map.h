@@ -21,6 +21,9 @@ public:
 	//ターン数
 	int turn = 0;
 
+	//先読みターン
+	int readTurn = 3;
+
 	//最終ターン数
 	int finalTurn = 20;
 
@@ -34,6 +37,8 @@ public:
 	int x, y;
 	bool click;
 
+
+	bool isFirstJson;
 
 private:
 	static Map* stayMap;

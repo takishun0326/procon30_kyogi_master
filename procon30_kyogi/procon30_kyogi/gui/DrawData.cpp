@@ -142,10 +142,39 @@ void DrawData::PushedButton() {
 	Map* map;
 	map = map->getMap();
 	
-	
+	FetchJson fetchJson;
+
+	string token = gui.textArea(L"token").text.narrow();
+	string matchNumber = gui.textArea(L"matchNumber").text.narrow();
+
+	ParseJson parseJson;
+
 //json	
 	if (gui.button(L"getJSON").pushed) {
+		
+		if (map->isFirstJson) {
+			fetchJson.fetch(token, matchNumber, map->turn);
 
+			parseJson.parse("json/data/Map/turn0.json");
+			map->turn++;
+
+			map->isFirstJson = true;
+		}
+		else {
+
+			fetchJson.fetch(token, matchNumber, map->turn);
+
+			//string 
+			parseJson.parseTurn1("json/data/Map/turn" + to_string(map->turn) + ".json");
+
+		}
+
+		
+		Prefetting pre;
+		pre.prefetting;
+
+		CreateJson createJSON;
+		createJSON.createJson(token, "", matchNumber);
 	}
 }
 
@@ -219,6 +248,8 @@ void DrawData::tokenSetUp() {
 
 	gui.textArea(L"token").setText(Token);
 }
+
+
 
 void DrawData::manualDirection(const int number) {
 	GUI guiManual(GUIStyle::Default);
