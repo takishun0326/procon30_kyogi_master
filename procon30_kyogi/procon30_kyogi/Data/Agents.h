@@ -17,7 +17,7 @@ public:
 	//otherAgents();
 
 	//actiondxdy 0 agentsnum,1 x, 2 y
-	vector<vector<int>> actionDxDy;
+	vector<pair<int, pair<int,int>>>actionDxDy;
 
 
 	static Agents* getAgents();
