@@ -1,6 +1,7 @@
 #pragma once
 #include"../Data/Map.h"
-
+#include"../Data/AgentsAction.h"
+#include"../Data/Field.h"
 
 class CreateMap {
 public:

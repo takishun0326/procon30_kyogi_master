@@ -131,7 +131,6 @@ bool CreateMap::createMapClass() {
 	map->turn = 0;
 	//æ“Ç‚Ýƒ^[ƒ“”‚Ì‰Šú‰»
 	map->readTurn = 3;
-	map->isGameStarted = false;
 
 
 	Agents* agents;
@@ -161,39 +160,9 @@ void CreateMap::createTurnField() {
 	agentsAcn = agentsAcn->getAgentsAction();
 
 	int agentS = agents->ourAgents.size();
-	field->turnAgent.resize(map->readTurn + 1, vector<pair<int, int>>(agentS));
 	agentsAcn->actionDxDy.resize(agentS, vector<pair<int, pair<int, int>>>(map->readTurn + 1, pair<int, pair<int, int>>(0, pair<int, int>(0, 0))));
 
-	int nowX[8];
-	int nowY[8];
-
-	rep(i, agentS) {
-		nowX[i] = agents->ourAgents[i][1] - 1;
-		nowY[i] = agents->ourAgents[i][2] - 1;
-		field->turnAgent[0][i] = make_pair(nowX[i], nowY[i]);
-	}
-
-	field->turnTiled[0] = field->tiled;
-
-
-	rep(turn, map->readTurn) {
-		rep(agentnum, agentS) {
-			nowX[agentnum] += agentsAcn->actionDxDy[agentnum][turn + 1].second.first;
-			nowY[agentnum] += agentsAcn->actionDxDy[agentnum][turn + 1].second.second;
-
-			if (field->turnTiled[turn + 1][nowX[agentnum]][nowY[agentnum]] == map->otherTeamID) {
-				field->turnTiled[turn][nowX[agentnum]][nowY[agentnum]] = 0;
-				nowX[agentnum] -= agentsAcn->actionDxDy[agentnum][turn + 1].second.first;
-				nowY[agentnum] -= agentsAcn->actionDxDy[agentnum][turn + 1].second.second;
-			}
-			else {
-				field->turnTiled[turn + 1][nowX[agentnum]][nowY[agentnum]] = map->ourTeamID;
-			}
-
-			field->turnAgent[turn + 1][agentnum] = make_pair(nowX[agentnum], nowY[agentnum]);
-
-		}
-	}
+	
 
 
 }
@@ -214,7 +183,6 @@ void CreateMap::debugSetUp() {
 	//Map.h
 	map->vertical = 20;
 	map->width = 20;
-	map->makeReadTurnMap = false;
 	map->ourTeamID = 1;
 	map->otherTeamID = 2;
 	//Agents.h
@@ -248,11 +216,7 @@ void CreateMap::debugSetUp() {
 	field->tiled.resize(map->width, vector<int>(map->vertical, 0));
 
 
-	field->turnTiled.resize(map->readTurn + 1, vector<vector<int>>(map->width, vector<int>(map->vertical, 0)));
-
-	rep(i, map->readTurn + 1) {
-		field->turnTiled[i] = field->tiled;
-	}
+	
 	//for()
 
 

@@ -4,6 +4,11 @@
 #include"../Data/Field.h"
 #include"../Data/Agents.h"
 #include"../gui/DrawMap.h"
+#include"../Data/AgentsAction.h"
+#include"../json/FetchJson.h"
+#include"../json/ParseJson.h"
+#include"../json/CreateJson.h"
+#include"../Algorithm/Prefetting.h"
 
 class DrawData {
 public: 

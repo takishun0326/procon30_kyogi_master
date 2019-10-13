@@ -157,8 +157,7 @@ void ParseJson::parse(string path) {
 	}*/
 
 	
-	map->firstJson = true;
-	map->turnFlg = true;
+
 	// actions
 }
 
@@ -326,10 +325,6 @@ void ParseJson::parseTurn1(string path) {
 	//}
 
 
-
-
-	map->firstJson = true;
-	map->turnFlg = true;
 	// actions
 }
 

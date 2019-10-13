@@ -3,10 +3,10 @@
 #include <string>
 #include <stdlib.h>
 #include "picojson.h"
-#include "../SystemManager.h"
 #include "data/JsonOption.h"
+#include"../general.h"
 
 class FetchJson {
 public:
-	void fetch(string, string, string, int);
+	void fetch(string, string, int);
 };
